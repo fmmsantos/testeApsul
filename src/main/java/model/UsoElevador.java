@@ -1,31 +1,29 @@
-package src.main.java.model;
+package model;
 
 public class UsoElevador {
-	private Integer andar;
-	private Character elevador;
-	private Character turno;
-	
-	public Integer getAndar() {
-		return andar;
-	}
-	public void setAndar(Integer andar) {
-		this.andar = andar;
-	}
-	public Character getElevador() {
-		return elevador;
-	}
-	public void setElevador(Character elevador) {
-		this.elevador = elevador;
-	}
-	public Character getTurno() {
-		return turno;
-	}
-	public void setTurno(Character turno) {
-		this.turno = turno;
-	}
-	
-	
-	
-	
+
+		private Integer andar;
+		private Character elevador;
+		private Character turno;
+		
+		public Integer getAndar() {
+			return andar;
+		}
+		public void setAndar(Integer andar) {
+			this.andar = andar;
+		}
+		public Character getElevador() {
+			return elevador;
+		}
+		public void setElevador(Character elevador) {
+			this.elevador = elevador;
+		}
+		public Character getTurno() {
+			return turno;
+		}
+		public void setTurno(Character turno) {
+			this.turno = turno;
+		}
+		
 
 }
