@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -29,18 +31,71 @@ public class ElevadorServiceImpl implements IElevadorService {
 	}
 
 	public List<Integer> andarMenosUtilizado() {
+		InputStream json = Main.class.getResourceAsStream("/input.json");
+		
+		String j = null;
 		try {
-			List<UsoElevador> lista = buscarUsoElevador();								
-			System.out.println(lista.size());
-			
+			j = org.apache.commons.io.IOUtils.toString(json);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		for ()
+		Type tipoLista = new TypeToken<List<UsoElevador>>() {}.getType();
+		List<UsoElevador> lista = new Gson().fromJson(j, tipoLista);
+							
+			Integer andar0=0;
+			Integer andar1=0; 
+			Integer andar2=0;
+			Integer andar3=0;
+			Integer andar4=0;
+			Integer andar5=0;
+			Integer andar6=0;
+			Integer andar7=0;
+			Integer andar8=0;
+			Integer andar9=0;
+			Integer andar10=0;
+			Integer andar11=0;
+			Integer andar12=0;
+			Integer andar13=0;
+			Integer andar14=0;
+			Integer andar15=0;
+			Integer andar16=0;
+			for(UsoElevador uso : lista) {				
+				if(uso.getAndar().equals(0)) andar0++;
+				else if(uso.getAndar().equals(0)) andar0++;
+				else if(uso.getAndar().equals(1)) andar1++;
+				else if(uso.getAndar().equals(2)) andar2++;
+				else if(uso.getAndar().equals(3)) andar3++;
+				else if(uso.getAndar().equals(4)) andar4++;
+				else if(uso.getAndar().equals(5)) andar5++;
+				else if(uso.getAndar().equals(6)) andar6++;
+				else if(uso.getAndar().equals(7)) andar7++;
+				else if(uso.getAndar().equals(8)) andar8++;
+				else if(uso.getAndar().equals(9)) andar9++;
+				else if(uso.getAndar().equals(10)) andar10++;
+				else if(uso.getAndar().equals(11)) andar11++;
+				else if(uso.getAndar().equals(12)) andar12++;
+				else if(uso.getAndar().equals(13)) andar13++;
+				else if(uso.getAndar().equals(14)) andar14++;
+				else if(uso.getAndar().equals(15)) andar15++;
+				else if(uso.getAndar().equals(16)) andar16++;
 
-		return null;
+			}
+			Integer somaArray[] = { andar0, andar1,andar2,andar3,andar4,andar5,andar6,andar7,andar8,andar9,andar10,andar11,andar12,
+					andar13,andar14,andar15,andar16};			
+			Arrays.sort(somaArray);
+			Integer menor = 0;
+			List<Integer> valores = Arrays.asList(somaArray);
+			List<Integer> menoresValores = new ArrayList<Integer>();
+			for(Integer resultado :valores) {
+				if (resultado < menor ) {
+					menoresValores.add(resultado);
+				}
+			}
+			
+
+		return menoresValores;
 	}
 
 	public List<Character> elevadorMaisFrequentado() {

@@ -12,6 +12,7 @@ import org.apache.commons.io.IOUtils;
 
 import com.google.gson.reflect.TypeToken;
 import model.UsoElevador;
+import service.ElevadorServiceImpl;
 
 
 
@@ -32,7 +33,9 @@ public class Main {
 		}
 		*/
 		System.out.println(lista.size());
-	}
-
 	
+	ElevadorServiceImpl elevador = new ElevadorServiceImpl();
+	System.out.println("Elevador menos Utilizado: " + elevador.andarMenosUtilizado());
+
+	}
 }
