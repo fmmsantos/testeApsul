@@ -85,13 +85,18 @@ public class ElevadorServiceImpl implements IElevadorService {
 			Integer somaArray[] = { andar0, andar1,andar2,andar3,andar4,andar5,andar6,andar7,andar8,andar9,andar10,andar11,andar12,
 					andar13,andar14,andar15,andar16};			
 			Arrays.sort(somaArray);
-			Integer menor = 0;
+			
+			Integer comparador = 0;
 			List<Integer> valores = Arrays.asList(somaArray);
+			Integer menor = valores.get(0);
 			List<Integer> menoresValores = new ArrayList<Integer>();
-			for(Integer resultado :valores) {
-				if (resultado < menor ) {
-					menoresValores.add(resultado);
+			for(Integer resultado : valores) {
+					//menor = resultado;
+					//comparador = menor;
+					if (menor == resultado) {	
+						menoresValores.add(resultado);	
 				}
+				
 			}
 			
 
