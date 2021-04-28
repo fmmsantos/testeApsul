@@ -1,4 +1,4 @@
-package model;
+package br.com.apsul.usoelevador.model;
 
 public class UsoElevador {
 
