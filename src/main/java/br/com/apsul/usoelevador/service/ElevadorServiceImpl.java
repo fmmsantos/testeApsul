@@ -32,7 +32,7 @@ public class ElevadorServiceImpl implements IElevadorService {
 
 	public List<Integer> andarMenosUtilizado() throws IOException {
 		List<UsoElevador> usos = buscarUsoElevador();
-		
+
 		Map<Integer, Integer> andaresQtdUso = new LinkedHashMap<Integer, Integer>();
 
 		for (UsoElevador uso : usos) {
@@ -63,7 +63,7 @@ public class ElevadorServiceImpl implements IElevadorService {
 
 	public List<Character> elevadorMaisFrequentado() throws IOException {
 		List<UsoElevador> usos = buscarUsoElevador();
-		
+
 		Map<Character, Integer> elevadores = new LinkedHashMap<Character, Integer>();
 
 		for (UsoElevador uso : usos) {
@@ -134,7 +134,7 @@ public class ElevadorServiceImpl implements IElevadorService {
 
 	public List<Character> elevadorMenosFrequentado() throws IOException {
 		List<UsoElevador> usos = buscarUsoElevador();
-		
+
 		Map<Character, Integer> elevadores = new LinkedHashMap<Character, Integer>();
 
 		for (UsoElevador uso : usos) {
@@ -243,9 +243,11 @@ public class ElevadorServiceImpl implements IElevadorService {
 				quantDeElevadorA = quantDeElevadorA + 1;
 			}
 		}
-
 		int quantElevador = usos.size();
-		float percentualDeUsoElevadorA = (quantDeElevadorA / quantElevador) * 100;
+		float valorA = (quantDeElevadorA / quantElevador) * 100;
+
+		Double percentualA = (double) Math.ceil(valorA);
+		float percentualDeUsoElevadorA = percentualA.floatValue();
 
 		return percentualDeUsoElevadorA;
 	}
@@ -261,7 +263,10 @@ public class ElevadorServiceImpl implements IElevadorService {
 		}
 
 		int quantElevador = usos.size();
-		float percentualDeUsoElevadorB = (quantDeElevadorB / quantElevador) * 100;
+		float valorB = (quantDeElevadorB / quantElevador) * 100;
+
+		Double percentualB = (double) Math.ceil(valorB);
+		float percentualDeUsoElevadorB = percentualB.floatValue();
 
 		return percentualDeUsoElevadorB;
 	}
@@ -277,7 +282,10 @@ public class ElevadorServiceImpl implements IElevadorService {
 		}
 
 		int quantElevador = usos.size();
-		float percentualDeUsoElevadorC = (quantDeElevadorC / quantElevador) * 100;
+		float valorC = (quantDeElevadorC / quantElevador) * 100;
+
+		Double percentualC = (double) Math.ceil(valorC);
+		float percentualDeUsoElevadorC = percentualC.floatValue();
 
 		return percentualDeUsoElevadorC;
 	}
@@ -293,7 +301,10 @@ public class ElevadorServiceImpl implements IElevadorService {
 		}
 
 		int quantElevador = usos.size();
-		float percentualDeUsoElevadorD = (quantDeElevadorD / quantElevador) * 100;
+		float valorD = (quantDeElevadorD / quantElevador) * 100;
+
+		Double percentualD = (double) Math.ceil(valorD);
+		float percentualDeUsoElevadorD = percentualD.floatValue();
 
 		return percentualDeUsoElevadorD;
 	}
@@ -307,9 +318,11 @@ public class ElevadorServiceImpl implements IElevadorService {
 				quantDeElevadorE = quantDeElevadorE + 1;
 			}
 		}
-
 		int quantElevador = usos.size();
-		float percentualDeUsoElevadorE = (quantDeElevadorE / quantElevador) * 100;
+		float valorE = (quantDeElevadorE / quantElevador) * 100;
+
+		Double percentualE = (double) Math.ceil(valorE);
+		float percentualDeUsoElevadorE = percentualE.floatValue();
 
 		return percentualDeUsoElevadorE;
 	}
